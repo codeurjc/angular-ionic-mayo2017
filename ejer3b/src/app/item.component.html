@@ -1,0 +1,11 @@
+<style>
+.tachado {
+  text-decoration: line-through;
+}
+</style>
+
+<div>
+  <input type="checkbox" [(ngModel)]="info.checked">
+  <span [class.tachado]="info.checked"> {{info.description}} </span>
+  <button (click)="removeItem()">Delete</button>
+</div>

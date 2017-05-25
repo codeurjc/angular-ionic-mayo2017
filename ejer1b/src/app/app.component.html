@@ -1,0 +1,14 @@
+<h1>My first Angular 2 App</h1>
+
+<input type="text" [(ngModel)]='input'>
+
+<button (click)='addToPage()'>
+    Add Content
+</button>
+
+<p *ngIf="items.length == 0; else itemsComp">No items</p>
+<ng-template #itemsComp>
+    <ul>
+        <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+</ng-template>
