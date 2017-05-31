@@ -1,0 +1,16 @@
+<style>
+.item-checked {
+  text-decoration: line-through
+}
+</style>
+
+<h1>My First Angular App</h1>
+
+<input type="text" [(ngModel)]="elem">
+<button (click)="addElement()">Add</button>
+
+<div *ngFor="let elem of elems">
+  <input type="checkbox" [(ngModel)]="elem.checked">
+  <span [class.item-checked]="elem.checked">{{elem.description}}</span>
+  <button (click)="delete(elem)">Delete</button>
+</div>

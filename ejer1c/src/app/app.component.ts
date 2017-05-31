@@ -5,6 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  name = 'Anybody';
-  imgUrl = 'assets/img.png';
+
+  elems: string[] = [];
+  elem: string;
+
+  addElement() {
+    this.elems.push(this.elem);
+    this.elem = '';
+  }
+
 }

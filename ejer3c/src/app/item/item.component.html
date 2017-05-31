@@ -1,0 +1,11 @@
+<style>
+.item-checked {
+  text-decoration: line-through
+}
+</style>
+
+<div>
+  <input type="checkbox" [(ngModel)]="model.checked">
+  <span [class.item-checked]="model.checked">{{model.description}}</span>
+  <button (click)="fireDeleted()">Delete</button>
+</div>

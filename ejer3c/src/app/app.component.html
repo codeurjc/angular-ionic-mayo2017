@@ -1,0 +1,7 @@
+<h1>My First Angular App</h1>
+
+<input type="text" [(ngModel)]="elem">
+<button (click)="addElement()">Add</button>
+
+<app-item *ngFor="let elem of elems" [model]='elem' (deleted)="delete($event)">
+</app-item>
