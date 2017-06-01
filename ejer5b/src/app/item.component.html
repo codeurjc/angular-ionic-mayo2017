@@ -1,0 +1,9 @@
+<div>
+<input type="checkbox" [checked]="item.checked"
+(change)="checkedChanged()">
+<span
+  [style.textDecoration]="item.checked?'line-through':'none'">
+  {{item.description}}
+</span>
+<button (click)="fireRemove()">Delete</button>
+</div>
