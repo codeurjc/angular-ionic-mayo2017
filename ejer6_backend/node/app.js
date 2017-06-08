@@ -32,6 +32,17 @@ app.route('/books/')
     })
 
 app.route('/books/:id')
+
+    .get((req, res) => {
+        let rId = parseInt(req.params['id']);
+        let pos = searchBook(rId);
+        if (pos !== undefined) {
+            res.json(books[pos]);
+        } else {
+            res.sendStatus(404);
+        }
+    })
+
     .put((req, res) => {
         let rId = parseInt(req.params['id']);
         let pos = searchBook(rId);
@@ -49,7 +60,7 @@ app.route('/books/:id')
 
         let pos = searchBook(parseInt(req.params['id']));
         if (pos !== undefined) {
-            let deletedBook = Books[pos];
+            let deletedBook = books[pos];
             books.splice(pos,1);
             res.json(deletedBook);
         } else {
